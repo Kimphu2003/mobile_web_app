@@ -6,7 +6,7 @@ import 'package:mobile_web_app/feature/home/screens/home_screen.dart';
 import 'package:mobile_web_app/feature/keyboard/screens/keyboard_screen.dart';
 import 'package:mobile_web_app/feature/location/screens/location_list_screen.dart';
 import 'package:mobile_web_app/feature/map/screens/map_screen.dart';
-import 'package:mobile_web_app/feature/presentation/screen/landmark_detail_screen.dart';
+import 'package:mobile_web_app/feature/landmark/screens/landmark_detail_screen.dart';
 
 import '../../feature/location/screens/detail_location_list_screen.dart';
 import '../../shell/main_shell.dart';

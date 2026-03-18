@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mobile_web_app/core/router/route_names.dart';
 
 import '../../../core/theme/app_theme.dart';
 
@@ -58,7 +59,7 @@ class LocationListScreen extends StatelessWidget {
       // ),
       width: double.infinity,
       child: GestureDetector(
-        onTap: () => context.push('/page2/location-list/detail'),
+        onTap: () => context.push(Routes.locationDetail),
         child: Card(
           elevation: 4,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),

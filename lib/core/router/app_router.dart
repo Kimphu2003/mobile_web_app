@@ -23,7 +23,7 @@ class AppRouter {
       initialLocation: initialRoute,
       errorBuilder:
           (_, __) =>
-      const Scaffold(body: Center(child: Text("Page not found"))),
+      Scaffold(body: Center(child: const Text("Page not found"))),
       routes: [
         GoRoute(path: Routes.home, builder: (_, __) => const HomeScreen()),
         GoRoute(path: Routes.landmarkDetail, builder: (_, __) => const LandmarkDetailScreen()),
@@ -39,21 +39,21 @@ class AppRouter {
           builder: (context, state, child) => MainShell(child: child),
           routes: [
             GoRoute(
-              path: '${Routes.shell}/${Routes.locationList}',
+              path: Routes.locationList,
               builder: (_, __) => const LocationListScreen(),
               routes: [
                 GoRoute(
-                  path: Routes.locationDetail,
+                  path: 'detail',
                   builder: (_, __) => const LocationDetailScreen(),
                 ),
               ],
             ),
             GoRoute(
-              path: '${Routes.shell}/${Routes.keyboard}',
+              path: Routes.keyboard,
               builder: (_, __) => const KeyboardScreen(),
             ),
             GoRoute(
-              path: '${Routes.shell}/${Routes.map}',
+              path: Routes.map,
               builder: (_, __) => const MapScreen(),
             ),
           ],

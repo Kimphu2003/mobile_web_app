@@ -51,23 +51,17 @@ class LocationDetailScreen extends StatelessWidget {
     );
   }
 
-  // Reusable responsive widget for the image cards
   Widget _buildLocationCard(
       BuildContext context, {
         required String imageUrl,
         required String title,
         required Color color,
       }) {
-    // double screenWidth = MediaQuery.of(context).size.width;
-    // Define a height based on screen size so it never grows too large
+
     double cardHeight = MediaQuery.of(context).size.height * 0.25;
 
     return SizedBox(
-      height: cardHeight, // Strictly control the total height of the card
-      // margin: EdgeInsets.symmetric(
-      //     vertical: screenWidth * 0.02,
-      //     horizontal: screenWidth * 0.04
-      // ),
+      height: cardHeight,
       width: double.infinity,
       child: GestureDetector(
         onTap: () {},
@@ -77,7 +71,7 @@ class LocationDetailScreen extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           child: Column(
             children: [
-              // 1. Image takes up 60% of the card height
+              // 1. Image
               Expanded(
                 flex: 2,
                 child: Image.asset(
@@ -87,7 +81,7 @@ class LocationDetailScreen extends StatelessWidget {
                 ),
               ),
 
-              // 2. Red Banner takes up 40% (or fits text)
+              // 2. Red Banner text
               SizedBox(
                 height: cardHeight * 0.25,
                 child: Container(

@@ -158,7 +158,7 @@ class _LandmarkDetailScreenState extends State<LandmarkDetailScreen> {
                   const SizedBox(width: 12),
                   Expanded(
                     child: ElevatedButton.icon(
-                      onPressed: () => context.push('${Routes.shell}/${Routes.locationList}'),
+                      onPressed: () => context.push(Routes.locationList),
                       icon: const Icon(
                         Icons.play_circle_outline,
                         color: Colors.white,

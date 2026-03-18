@@ -20,8 +20,8 @@ class MainShell extends StatelessWidget {
 
   int _selectedIndex(BuildContext context) {
     final location = GoRouterState.of(context).uri.toString();
-    if (location.startsWith('${Routes.shell}/${Routes.keyboard}')) return 1;
-    if (location.startsWith('${Routes.shell}/${Routes.map}')) return 2;
+    if (location.startsWith(Routes.keyboard)) return 1;
+    if (location.startsWith(Routes.map)) return 2;
     return 0; // default: location-list (and detail)
   }
 
@@ -67,11 +67,11 @@ class MainShell extends StatelessWidget {
         onTap: (index) {
           switch (index) {
             case 0:
-              context.go('${Routes.shell}/${Routes.locationList}');
+              context.go(Routes.locationList);
             case 1:
-              context.go('${Routes.shell}/${Routes.keyboard}');
+              context.go(Routes.keyboard);
             case 2:
-              context.go('${Routes.shell}/${Routes.map}');
+              context.go(Routes.map);
           }
         },
         items: const [

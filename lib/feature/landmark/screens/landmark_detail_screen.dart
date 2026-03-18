@@ -13,14 +13,14 @@ class LandmarkDetailScreen extends StatefulWidget {
 class _LandmarkDetailScreenState extends State<LandmarkDetailScreen> {
   final ScrollController _controller = ScrollController();
 
-  final String paragraphText =
-      'Khi ánh hoàng hôn buông xuống, thành phố bắt đầu khoác lên mình lớp áo rực rỡ của những ánh đèn neon, nhưng đâu đó giữa những khối bê tông cốt thép, một nhành hoa dại vẫn kiên cường vươn mình qua kẽ nứt của vỉa hè. Nó nhắc nhở chúng ta rằng, dù cuộc sống có hối hả và đầy áp lực đến đâu, sức sống mãnh liệt của tự nhiên vẫn luôn tồn tại âm thầm. Đôi khi, việc dừng lại một nhịp để quan sát những điều nhỏ bé ấy không phải là lãng phí thời gian, mà là cách để chúng ta tìm thấy sự cân bằng trong tâm hồn, giúp bản thân nhận ra vẻ đẹp hiện hữu ngay trong những góc khuất bình dị nhất của cuộc đời.';
+  final String paragraphText = 'Trong guồng quay hối hả của kỷ nguyên số, nơi mà mọi thứ dường như đều được đo lường bằng tốc độ và hiệu suất, con người đôi khi vô tình rơi vào trạng thái "sống vội" mà quên mất việc tận hưởng những khoảnh khắc hiện tại. Chúng ta mải mê đuổi theo những mục tiêu xa xôi, những cột mốc thành công được định nghĩa bởi xã hội, để rồi một ngày nhận ra rằng những giá trị chân thực nhất lại nằm ở những điều giản đơn nhất. Đó có thể là mùi hương nồng nàn của tách cà phê buổi sáng khi phố xá còn chưa kịp thức giấc, là âm thanh rì rào của lá cây trong một chiều lộng gió, hay đơn giản là một cuộc trò chuyện sâu sắc không bị ngắt quãng bởi tiếng thông báo từ điện thoại. Sự kết nối giữa con người và thế giới xung quanh không chỉ được xây dựng qua những đường truyền internet băng thông rộng, mà còn qua sự thấu cảm và những trải nghiệm thực tế. Việc dành thời gian để quan sát một nhành hoa dại vươn mình giữa những khối bê tông khô khốc, hay tự tay chăm chút cho một dự án cá nhân đầy tâm huyết, chính là cách để chúng ta tái tạo năng lượng và tìm lại bản ngã. Khi biết trân trọng sự tĩnh lặng và những khoảng lặng giữa các nốt nhạc của cuộc đời, ta sẽ thấy rằng hạnh phúc không phải là một đích đến cuối cùng, mà là một hành trình được dệt nên từ vô vàn những mảnh ghép bình dị nhưng lấp lánh sắc màu.';
 
   static const double _expandedHeight = 250;
   static const double _collapsedHeight = 80;
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children: [
@@ -78,6 +78,7 @@ class _LandmarkDetailScreenState extends State<LandmarkDetailScreen> {
                             duration: const Duration(milliseconds: 100),
                             opacity: isVisible ? 1 : 0,
                             child: Container(
+                              width: double.infinity,
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -90,10 +91,14 @@ class _LandmarkDetailScreenState extends State<LandmarkDetailScreen> {
                                   ),
                                 ],
                               ),
-                              child: const Text(
-                                'Chào mừng bạn đến với trang 1',
-                                style: TextStyle(
-                                  fontSize: 15,
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Chào mừng bạn đến với trang 1',
+                                  style: TextStyle(
+                                    fontSize: size.width * 0.045,
+                                  ),
                                 ),
                               ),
                             ),

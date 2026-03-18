@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_web_app/core/router/route_names.dart';
 
-
 class KeyboardScreen extends StatefulWidget {
   const KeyboardScreen({super.key});
 
@@ -16,9 +15,7 @@ class _KeyboardScreenState extends State<KeyboardScreen> {
   void onKeyTap(String value) {
     setState(() {
       if (value == "del") {
-        if (input.isNotEmpty) {
-          input = input.substring(0, input.length - 1);
-        }
+        input = input.substring(0, input.length - 1);
       } else {
         input += value;
       }
